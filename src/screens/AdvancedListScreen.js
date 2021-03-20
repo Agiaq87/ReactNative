@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, StyleSheet, View} from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 
-const ListScreen = () => {
+const AdvancedListScreen = () => {
     const jsonArray = [
         {name: '1', surname: 'A'},
         {name: '2', surname: 'B'},
@@ -17,15 +17,22 @@ const ListScreen = () => {
         {name: '11', surname: 'M'},
         {name: '12', surname: 'N'},
         {name: '13', surname: 'O'},
+        {name: '14', surname: 'P'},
+        {name: '15', surname: 'Q'},
+        {name: '16', surname: 'R'},
     ];
 
 
     return(
         <View>
             <Text style={styles.title}>
-                ListScreen
+                AdvancedListScreen
             </Text>
-            <FlatList data={jsonArray} renderItem={({item}) => {
+            <FlatList 
+            keyExtractor={jsonArray => jsonArray.surname}
+            showsHorizontalScrollIndicator={true}
+            data={jsonArray} 
+            renderItem={({item}) => {
                     return (
                         <Text style={styles.name}>{item.name} - {item.surname}</Text>
                     );
@@ -40,11 +47,13 @@ const styles = StyleSheet.create({
         fontSize: 30
     },
     name: {
-        fontSize: 18
+        fontSize: 18,
+        marginVertical: 4,
+        marginHorizontal: 20
     },
     /*surname: {
         fontSize: 16
     }*/
 });
 
-export default ListScreen;
+export default AdvancedListScreen;
