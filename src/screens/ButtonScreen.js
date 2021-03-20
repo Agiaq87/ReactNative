@@ -1,13 +1,20 @@
 import React from 'react';
-import {View, Text, StyleSheet, Button} from 'react-native';
+import {View, Text, StyleSheet, Button, TouchableOpacity} from 'react-native';
 
 const ButtonScreen = () => {
+    const buttonTitle = 'Print value into console';
+    const value = 'Button pressed';
+
     return(
         <View>
             <Text style={styles.title}>Button Example</Text>
             <Button 
-            title='Print value into console' 
-            onPress={() => console.log('Button pressed')}/>
+            title={buttonTitle} 
+            onPress={() => console.log(value)}/>
+            <TouchableOpacity
+            onPress={() => console.log(value)}>
+                <Text style={styles.title}>{buttonTitle}</Text>
+            </TouchableOpacity>
         </View>
     );
 }

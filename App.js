@@ -13,7 +13,7 @@ const navigator = createStackNavigator(
     Buttons: ButtonScreen,
   },
   {
-    initialRouteName: 'Buttons',
+    initialRouteName: 'Home',
     defaultNavigationOptions: {
       title: "React Native App Demo",
     },
