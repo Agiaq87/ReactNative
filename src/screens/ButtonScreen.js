@@ -1,10 +1,13 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Button} from 'react-native';
 
 const ButtonScreen = () => {
     return(
         <View>
             <Text style={styles.title}>Button Example</Text>
+            <Button 
+            title='Print value into console' 
+            onPress={() => console.log('Button pressed')}/>
         </View>
     );
 }
@@ -14,12 +17,9 @@ const styles = StyleSheet.create({
         fontSize: 30,
         padding: 4
     },
-    buttonTitle: {
-        fontSize: 18
-    },
-    touchableTitle: {
-        fontSize: 18
+    spacing: {
+        margin: 4
     }
 });
-
+ 
 export default ButtonScreen;
