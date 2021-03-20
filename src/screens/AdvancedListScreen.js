@@ -30,7 +30,7 @@ const AdvancedListScreen = () => {
             </Text>
             <FlatList 
             keyExtractor={jsonArray => jsonArray.surname}
-            showsHorizontalScrollIndicator={true}
+            //showsHorizontalScrollIndicator={true}
             data={jsonArray} 
             renderItem={({item}) => {
                     return (
