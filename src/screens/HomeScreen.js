@@ -17,6 +17,7 @@ const HomeScreen = props => {
       <Button title='Go to AdvancedList' onPress={() => props.navigation.navigate('AdvancedList')}/>
       <Button title='Go to ParentChild' onPress={() => props.navigation.navigate('Parent')}/>
       <Button title='Go to ComposedList' onPress={() => props.navigation.navigate('ComposedList')}/>
+      <Button title='Go to StateExample1' onPress={() => props.navigation.navigate('StateExample1')}/>
 
       <Text style={styles.subSubTitle}>Choose one Touchable (worst)</Text>
       <TouchableOpacity
@@ -38,6 +39,10 @@ const HomeScreen = props => {
       <TouchableOpacity
       onPress={() => props.navigation.navigate('ComposedList')}>
       <Text style={styles.button}>Go to ComposedList</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+      onPress={() => props.navigation.navigate('StateExample1')}>
+      <Text style={styles.button}>Go to StateExample1</Text>
       </TouchableOpacity>
     </View>
   );
