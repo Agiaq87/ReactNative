@@ -9,6 +9,7 @@ import ComposedListScreen from './src/screens/ComposedListScreen';
 import StateExample from './src/screens/StateExample1';
 import ColorFest from './src/screens/ColorFest';
 import ColorCounter from './src/screens/ColorCounter';
+import TextInputScreen from './src/screens/TextInputScreen';
 
 const navigator = createStackNavigator(
   {
@@ -21,6 +22,7 @@ const navigator = createStackNavigator(
     StateExample1: StateExample,
     Color1: ColorFest,
     Color2: ColorCounter,
+    TextInput: TextInputScreen,
   },
   {
     initialRouteName: 'Home',
