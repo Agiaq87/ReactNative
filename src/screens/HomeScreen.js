@@ -10,15 +10,27 @@ const HomeScreen = props => {
       <Text style={styles.subTitle}>{subTitle}</Text>
 
       <Text style={styles.subSubTitle}>Choose one Button (best)</Text>
-      <Button title='Go to Button' onPress={() => props.navigation.navigate('Buttons')}/>
-      <Button title='Go to List' onPress={() => props.navigation.navigate('List')}/>
-      <Button title='Go to AdvancedList' onPress={() => props.navigation.navigate('AdvancedList')}/>
-      <Button title='Go to ParentChild' onPress={() => props.navigation.navigate('Parent')}/>
-      <Button title='Go to ComposedList' onPress={() => props.navigation.navigate('ComposedList')}/>
-      <Button title='Go to StateExample1' onPress={() => props.navigation.navigate('StateExample1')}/>
-      <Button title='Go to ColorFest' onPress={() => props.navigation.navigate('Color1')}/>
-      <Button title='Go to ColorCounter' onPress={() => props.navigation.navigate('Color2')}/>
-      <Button title='Go to TextInput' onPress={() => props.navigation.navigate('TextInput')}/>
+      <View
+        style={styles.flex}>
+          <Button title='Go to Button' onPress={() => props.navigation.navigate('Buttons')}/>
+          <Button title='Go to List' onPress={() => props.navigation.navigate('List')}/>
+      </View>
+      <View
+        style={styles.flex}>
+          <Button title='Go to ParentChild' onPress={() => props.navigation.navigate('Parent')}/>
+          <Button title='Go to ComposedList' onPress={() => props.navigation.navigate('ComposedList')}/>
+      </View>
+      <View
+        style={styles.flex}>
+          <Button title='Go to AdvancedList' onPress={() => props.navigation.navigate('AdvancedList')}/>
+          <Button title='Go to StateExample1' onPress={() => props.navigation.navigate('StateExample1')}/>
+      </View>
+      <View
+        style={styles.flex}>
+          <Button title='Go to ColorFest' onPress={() => props.navigation.navigate('Color1')}/>
+          <Button title='Go to ColorCounter' onPress={() => props.navigation.navigate('Color2')}/>
+          <Button title='Go to TextInput' onPress={() => props.navigation.navigate('TextInput')}/>
+      </View>
     </View>
   );
 };
@@ -71,6 +83,12 @@ const styles = StyleSheet.create({
   button: {
     padding: 4,
     fontSize: 14
+  },
+  flex: {
+    flexDirection: 'column', 
+    margin: 8,
+    alignItems: 'center',
+    justifyContent: 'space-around'
   }
 });
 
