@@ -7,6 +7,7 @@ import ButtonScreen from './src/screens/ButtonScreen';
 import ParentScreen from './src/screens/ParentScreen';
 import ComposedListScreen from './src/screens/ComposedListScreen';
 import StateExample from './src/screens/StateExample1';
+import ColorFest from './src/screens/ColorFest';
 
 const navigator = createStackNavigator(
   {
@@ -17,6 +18,7 @@ const navigator = createStackNavigator(
     Parent: ParentScreen,
     ComposedList: ComposedListScreen,
     StateExample1: StateExample,
+    Color1: ColorFest,
   },
   {
     initialRouteName: 'Home',

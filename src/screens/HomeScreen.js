@@ -1,7 +1,5 @@
 import React from "react";
 import { Text, StyleSheet, View, TouchableOpacity, Button } from "react-native";
-import { color } from "react-native-reanimated";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 
 const HomeScreen = props => {
   const title = <Text style={styles.title}>ReactNative Demo</Text>;
@@ -18,7 +16,15 @@ const HomeScreen = props => {
       <Button title='Go to ParentChild' onPress={() => props.navigation.navigate('Parent')}/>
       <Button title='Go to ComposedList' onPress={() => props.navigation.navigate('ComposedList')}/>
       <Button title='Go to StateExample1' onPress={() => props.navigation.navigate('StateExample1')}/>
+      <Button title='Go to ColorFest' onPress={() => props.navigation.navigate('Color1')}/>
+      
+    </View>
+  );
+};
 
+const makeTouchable = () => {
+  return (
+    <View>
       <Text style={styles.subSubTitle}>Choose one Touchable (worst)</Text>
       <TouchableOpacity
       onPress={() => props.navigation.navigate('Buttons')}>
@@ -46,7 +52,7 @@ const HomeScreen = props => {
       </TouchableOpacity>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   title: {
