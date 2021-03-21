@@ -4,6 +4,8 @@ import HomeScreen from "./src/screens/HomeScreen";
 import ListScreen from './src/screens/ListScreen';
 import AdvancedListScreen from './src/screens/AdvancedListScreen';
 import ButtonScreen from './src/screens/ButtonScreen';
+import ParentScreen from './src/screens/ParentScreen';
+import ComposedListScreen from './src/screens/ComposedListScreen';
 
 const navigator = createStackNavigator(
   {
@@ -11,6 +13,8 @@ const navigator = createStackNavigator(
     List: ListScreen,
     AdvancedList: AdvancedListScreen,
     Buttons: ButtonScreen,
+    Parent: ParentScreen,
+    ComposedList: ComposedListScreen,
   },
   {
     initialRouteName: 'Home',
