@@ -5,17 +5,17 @@ import ChildScreen from './ChildScreen';
 const ParentScreen = () => {
     return (
         <View style={styles.item}>
-            <ChildScreen title='One'/>
-            <ChildScreen title='Two'/>
-            <ChildScreen title='Three'/>
-            <ChildScreen title='Four'/>
+            <ChildScreen title='One' imageSource={require('../../assets/favicon.png')}/>
+            <ChildScreen title='Two' imageSource={require('../../assets/favicon.png')}/>
+            <ChildScreen title='Three' imageSource={require('../../assets/favicon.png')}/>
+            <ChildScreen title='Four' imageSource={require('../../assets/favicon.png')}/>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     item: {
-        padding: 8
+        padding: 2
     }
 });
 
