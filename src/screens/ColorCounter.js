@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
 import ColorCounterItem from './ColorCounterItem';
 
+const COLOR_DELTA = 10;
+
 const ColorCounter = () => {
     const [red, setRed] = useState(0);
     const [green, setGreen] = useState(0);
@@ -15,22 +17,36 @@ const ColorCounter = () => {
             name='Red' 
             backgroundColor={styles.backgroundColorRed}
             styles={styles} 
-            onIncrease={() => setRed(red + 10)}
-            onDecrease={() => setRed(red - 10)}/>
+            onIncrease={() => {
+                if (red + COLOR_DELTA > 255) {
+                    setRed(COLOR_DELTA);
+                    return;
+                }
+                setRed(red + COLOR_DELTA);
+            }}
+            onDecrease={() => {
+                if (red - COLOR_DELTA < 0) {
+                    setRed(0);
+                    return;
+                }
+
+                setRed(red - COLOR_DELTA);
+                }
+                }/>
 
             <ColorCounterItem 
             name='Green' 
             backgroundColor={styles.backgroundColorGreen}
             styles={styles} 
-            onIncrease={() => setGreen(green + 10)}
-            onDecrease={() => setGreen(green - 10)}/>
+            onIncrease={() => setGreen(checkColorIncrease(green + COLOR_DELTA))}
+            onDecrease={() => setGreen(checkColorDecrease(green - COLOR_DELTA))}/>
         
             <ColorCounterItem 
             name='Blue' 
             backgroundColor={styles.backgroundColorBlue}
             styles={styles} 
-            onIncrease={() => setBlue(blue + 10)}
-            onDecrease={() => setBlue(blue - 10)}/>
+            onIncrease={() => setBlue(checkColorIncrease(blue + COLOR_DELTA))}
+            onDecrease={() => setBlue(checkColorDecrease(blue - COLOR_DELTA))}/>
 
             <View
                 style={
@@ -47,22 +63,20 @@ const ColorCounter = () => {
     );
 }
 
-const checkColorDecrease = ({color}) => {
+const checkColorDecrease = (color) => {
     console.log(color);
     if (color < 0) {
-        return 0;
-    } else {
-        return color - 1;
-    }
+        return 255;
+    } 
+    return color;
 }
 
-const checkColorIncrease = ({color}) => {
+const checkColorIncrease = (color) => {
     console.log(color);
     if (color > 255){
         return 0; 
-    } else {
-        return color + 1;
-    }
+    } 
+    return color;
 }
 
 const styles = StyleSheet.create({
